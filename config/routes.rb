@@ -1,3 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  post '/test_type', to: 'test_type#create'
+  get '/test_type/:id', to: 'test_type#show'
+  get '/test_type', to: 'test_type#index'
+  patch '/test_type/:id', to: 'test_type#update'
 end
