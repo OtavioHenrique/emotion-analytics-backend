@@ -1,0 +1,2 @@
+class PeopleAppearance < ApplicationRecord
+end
