@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   patch '/test_type/:id', to: 'test_type#update'
 
   resources :tests, only: %i[index show create update]
+  resources :emotions, only: %i[index show create update]
 end
