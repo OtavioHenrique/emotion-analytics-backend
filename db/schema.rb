@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_181736) do
+ActiveRecord::Schema.define(version: 2019_10_20_215652) do
+
+  create_table "emotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "anger"
+    t.integer "contempt"
+    t.integer "disgusted"
+    t.integer "fear"
+    t.integer "joy"
+    t.integer "sadness"
+    t.integer "valence"
+    t.integer "engagement"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "test_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "start_url"
