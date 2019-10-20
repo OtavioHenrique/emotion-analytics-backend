@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_091006) do
+ActiveRecord::Schema.define(version: 2019_10_20_181736) do
 
   create_table "test_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "start_url"
@@ -18,4 +18,13 @@ ActiveRecord::Schema.define(version: 2019_10_15_091006) do
     t.boolean "allow_abandonment"
   end
 
+  create_table "tests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.boolean "abandoned"
+    t.bigint "test_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["test_type_id"], name: "index_tests_on_test_type_id"
+  end
+
+  add_foreign_key "tests", "test_types"
 end
