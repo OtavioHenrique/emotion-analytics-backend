@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_225822) do
+ActiveRecord::Schema.define(version: 2019_10_20_233846) do
 
   create_table "emotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "anger"
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(version: 2019_10_20_225822) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "occurrences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "test_id"
+    t.bigint "expression_id"
+    t.bigint "emotion_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["emotion_id"], name: "index_occurrences_on_emotion_id"
+    t.index ["expression_id"], name: "index_occurrences_on_expression_id"
+    t.index ["test_id"], name: "index_occurrences_on_test_id"
+  end
+
   create_table "test_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "start_url"
     t.text "objective"
@@ -65,5 +76,8 @@ ActiveRecord::Schema.define(version: 2019_10_20_225822) do
     t.index ["test_type_id"], name: "index_tests_on_test_type_id"
   end
 
+  add_foreign_key "occurrences", "emotions"
+  add_foreign_key "occurrences", "expressions"
+  add_foreign_key "occurrences", "tests"
   add_foreign_key "tests", "test_types"
 end
