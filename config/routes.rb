@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get '/test_type/:id', to: 'test_type#show'
   get '/test_type', to: 'test_type#index'
   patch '/test_type/:id', to: 'test_type#update'
+
+  resources :tests, only: %i[index show create update]
 end
