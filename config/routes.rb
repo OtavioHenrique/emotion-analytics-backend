@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   resources :tests, only: %i[index show create update]
   resources :emotions, only: %i[index show create update]
+  resources :expressions, only: %i[index show create update]
+  resources :occurrences, only: %i[index show create update]
 end
