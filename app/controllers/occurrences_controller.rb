@@ -2,7 +2,13 @@
 
 class OccurrencesController < ApplicationController
   def create
-    occurrence = Occurrence.new(occurrence_params)
+    test = Test.find occurrence_params[:test][:id]
+
+    expression = Expression.create(occurrence_params[:expression])
+
+    emotion = Emotion.create(occurrence_params[:emotion])
+
+    occurrence = Occurrence.new(test_id: test.id, expression_id: expression.id, emotion_id: emotion.id)
 
     if occurrence.save
       render json: occurrence, status: :created
@@ -36,6 +42,46 @@ class OccurrencesController < ApplicationController
   private
 
   def occurrence_params
-    params.require(:occurrence).permit(:test, :expression, :emotion)
+    params.require(:occurrence).permit(test: :id, expression: expression_params,
+                                       emotion: emotion_params).to_h
+  end
+
+  def emotion_params
+    @emotion_params ||= %i[
+      anger
+      contempt
+      disgusted
+      fear
+      joy
+      sadness
+      valence
+      engagement
+    ]
+  end
+
+  def expression_params
+    @expression_params ||= %i[
+      attention
+      brow_furrow
+      brow_raise
+      cheek_raise
+      chin_raise
+      dimpler
+      eye_closure
+      eye_widen
+      inner_brow_raise
+      jaw_drop
+      lid_tighten
+      lip_corner_depressor
+      lip_press
+      lip_pucker
+      lip_stretch
+      lip_suck
+      mouth_open
+      nose_wrinkle
+      smile
+      smirk
+      upper_lip_raise
+    ]
   end
 end
