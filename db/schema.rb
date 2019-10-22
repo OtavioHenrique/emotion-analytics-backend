@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_10_20_233846) do
     t.integer "brow_furrow"
     t.integer "brow_raise"
     t.integer "cheek_raise"
-    t.integer "chin_raiser"
+    t.integer "chin_raise"
     t.integer "dimpler"
     t.integer "eye_closure"
     t.integer "eye_widen"
