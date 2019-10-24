@@ -10,43 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_20_233846) do
+ActiveRecord::Schema.define(version: 2019_10_24_225504) do
 
   create_table "emotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "anger"
-    t.integer "contempt"
-    t.integer "disgusted"
-    t.integer "fear"
-    t.integer "joy"
-    t.integer "sadness"
-    t.integer "valence"
-    t.integer "engagement"
+    t.float "anger"
+    t.float "contempt"
+    t.float "disgusted"
+    t.float "fear"
+    t.float "joy"
+    t.float "sadness"
+    t.float "valence"
+    t.float "engagement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "expressions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "attention"
-    t.integer "brow_furrow"
-    t.integer "brow_raise"
-    t.integer "cheek_raise"
-    t.integer "chin_raise"
-    t.integer "dimpler"
-    t.integer "eye_closure"
-    t.integer "eye_widen"
-    t.integer "inner_brow_raise"
-    t.integer "jaw_drop"
-    t.integer "lid_tighten"
-    t.integer "lip_corner_depressor"
-    t.integer "lip_press"
-    t.integer "lip_pucker"
-    t.integer "lip_stretch"
-    t.integer "lip_suck"
-    t.integer "mouth_open"
-    t.integer "nose_wrinkle"
-    t.integer "smile"
-    t.integer "smirk"
-    t.integer "upper_lip_raise"
+    t.float "attention"
+    t.float "brow_furrow"
+    t.float "brow_raise"
+    t.float "cheek_raise"
+    t.float "chin_raise"
+    t.float "dimpler"
+    t.float "eye_closure"
+    t.float "eye_widen"
+    t.float "inner_brow_raise"
+    t.float "jaw_drop"
+    t.float "lid_tighten"
+    t.float "lip_corner_depressor"
+    t.float "lip_press"
+    t.float "lip_pucker"
+    t.float "lip_stretch"
+    t.float "lip_suck"
+    t.float "mouth_open"
+    t.float "nose_wrinkle"
+    t.float "smile"
+    t.float "smirk"
+    t.float "upper_lip_raise"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
