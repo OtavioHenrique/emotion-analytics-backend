@@ -5,7 +5,7 @@ class CreateExpressions < ActiveRecord::Migration[5.2]
       t.integer :brow_furrow
       t.integer :brow_raise
       t.integer :cheek_raise
-      t.integer :chin_raiser
+      t.integer :chin_raise
       t.integer :dimpler
       t.integer :eye_closure
       t.integer :eye_widen
