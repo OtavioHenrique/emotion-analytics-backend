@@ -3,7 +3,11 @@
 module Graph
   class EmotionsController < ApplicationController
     def generate
-      render json: { message: "ola" }
+      test = Test.find params[:id]
+
+      data = ::GraphCalculatorService.new(test: test, graph: :emotions).call
+
+      render json: data, status: :ok
     end
   end
 end
