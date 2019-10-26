@@ -8,7 +8,14 @@ class OccurrencesController < ApplicationController
 
     emotion = Emotion.create(occurrence_params[:emotion])
 
-    occurrence = Occurrence.new(test_id: test.id, expression_id: expression.id, emotion_id: emotion.id)
+    people_appearance = PeopleAppearance.create(params[:people_appearance])
+
+    occurrence = Occurrence.new(
+      test_id: test.id,
+      expression_id: expression.id,
+      emotion_id: emotion.id,
+      people_appearance_id: people_appearance.id
+    )
 
     if occurrence.save
       render json: occurrence, status: :created
@@ -42,8 +49,19 @@ class OccurrencesController < ApplicationController
   private
 
   def occurrence_params
-    params.require(:occurrence).permit(test: :id, expression: expression_params,
-                                       emotion: emotion_params).to_h
+    params.require(:occurrence).permit(test: :id,
+                                        expression: expression_params,
+                                        emotion: emotion_params,
+                                        people_appearance: people_appearance_params,
+                                      ).to_h
+  end
+
+  def people_appearance_params
+    @people_appearance_params ||= %i[
+      age
+      gender
+      glasses
+    ]
   end
 
   def emotion_params
