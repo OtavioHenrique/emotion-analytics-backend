@@ -10,4 +10,14 @@ Rails.application.routes.draw do
   get   '/people_appearence/:id', to: 'people_appearance#show'
   get   '/people_appearance',     to: 'people_appearance#index'
   patch '/people_appearance/:id', to: 'people_appearance#update'
+
+  post  '/people',     to: 'people#create'
+  get   '/people/:id', to: 'people#show'
+  get   '/people',     to: 'people#index'
+  patch '/people/:id', to: 'people#update'
+
+  resources :tests, only: %i[index show create update]
+  resources :emotions, only: %i[index show create update]
+  resources :expressions, only: %i[index show create update]
+  resources :occurrences, only: %i[index show create update]
 end
