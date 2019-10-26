@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_24_225504) do
+ActiveRecord::Schema.define(version: 2019_10_26_172553) do
 
   create_table "emotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.float "anger"
@@ -62,6 +62,12 @@ ActiveRecord::Schema.define(version: 2019_10_24_225504) do
     t.index ["test_id"], name: "index_occurrences_on_test_id"
   end
 
+  create_table "people", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "birthday"
+  end
+
   create_table "test_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "start_url"
     t.text "objective"
@@ -73,6 +79,8 @@ ActiveRecord::Schema.define(version: 2019_10_24_225504) do
     t.bigint "test_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "people_id"
+    t.index ["people_id"], name: "index_tests_on_people_id"
     t.index ["test_type_id"], name: "index_tests_on_test_type_id"
   end
 
