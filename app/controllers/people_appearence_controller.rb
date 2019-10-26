@@ -1,28 +1,28 @@
-class PeopleAppearenceController < ApplicationController
+class PeopleAppearanceController < ApplicationController
   def create
-    new_record = PeopleAppearence.create(
+    new_record = PeopleAppearance.create(
       age: params['age'],
       gender: params['gender'],
       glasses: params['glasses']
     )
 
     render json: new_record, status: 201
-  end 
+  end
 
   def show
-    people_appearence = PeopleAppearence.find params['id']
+    people_appearence = PeopleAppearance.find params['id']
 
     render json: people_appearence
   end
 
   def index
-    all_people_appearence = PeopleAppearence.all
+    all_people_appearence = PeopleAppearance.all
 
     render json: all_people_appearence
   end
 
   def update
-    record = PeopleAppearence.find params['id']
+    record = PeopleAppearance.find params['id']
 
     record.age = params['age'] || record.age
     record.gender = params['gender'] || record.gender

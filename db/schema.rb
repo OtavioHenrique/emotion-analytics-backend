@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_174730) do
+ActiveRecord::Schema.define(version: 2019_10_26_175918) do
 
   create_table "emotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.float "anger"
@@ -57,8 +57,10 @@ ActiveRecord::Schema.define(version: 2019_10_26_174730) do
     t.bigint "emotion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "people_appearances_id"
     t.index ["emotion_id"], name: "index_occurrences_on_emotion_id"
     t.index ["expression_id"], name: "index_occurrences_on_expression_id"
+    t.index ["people_appearances_id"], name: "index_occurrences_on_people_appearances_id"
     t.index ["test_id"], name: "index_occurrences_on_test_id"
   end
 
@@ -68,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_174730) do
     t.datetime "birthday"
   end
 
-  create_table "people_appearences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "people_appearances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "age"
     t.text "gender"
     t.integer "glasses"
