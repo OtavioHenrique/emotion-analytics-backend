@@ -3,7 +3,7 @@ class PeopleController < ApplicationController
     new_people = People.create(
       name: params['name'],
       email: params['email'],
-      birth: params['birth']
+      birthday: params['birthday']
     )
 
     render json: new_people, status: 201
@@ -26,7 +26,7 @@ class PeopleController < ApplicationController
 
     people.name = params['name'] || people.name
     people.email = params['email'] || people.email
-    people.birth = params['birth'] || people.birth
+    people.birthday = params['birthday'] || people.birthday
 
     people.save
 
@@ -36,6 +36,6 @@ class PeopleController < ApplicationController
   private
 
   def people_params
-    params.require(:people).permit(:name, :email, :birth)
+    params.require(:people).permit(:name, :email, :birthday)
   end
 end
