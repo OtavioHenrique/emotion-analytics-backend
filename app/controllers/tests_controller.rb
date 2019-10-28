@@ -36,6 +36,6 @@ class TestsController < ApplicationController
   private
 
   def test_params
-    params.require(:test).permit(:abandoned, :test_type_id)
+    params.require(:test).permit(:abandoned, :test_type_id, :people_id)
   end
 end

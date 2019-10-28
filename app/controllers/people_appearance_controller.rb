@@ -26,7 +26,7 @@ class PeopleAppearanceController < ApplicationController
 
     record.age = params['age'] || record.age
     record.gender = params['gender'] || record.gender
-    record.glasses = params['glasses'] || record..glasses
+    record.glasses = params['glasses'] || record.glasses
 
     record.save
 
