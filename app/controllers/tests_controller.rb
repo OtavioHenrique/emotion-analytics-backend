@@ -29,7 +29,7 @@ class TestsController < ApplicationController
     if test.update(test_params)
       render json: test, status: :ok
     else
-      render json: { errors: tests.errors }, status: :unprocessable_entity
+      render json: { errors: test.errors }, status: :unprocessable_entity
     end
   end
 
