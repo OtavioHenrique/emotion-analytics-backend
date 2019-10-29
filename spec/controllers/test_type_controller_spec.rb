@@ -8,7 +8,7 @@ RSpec.describe TestTypeController, type: :controller do
       test_type: {
         start_url: "https://facebook.com",
 	objective: "Achar a mina da savero",
-	allow_abandonment: "true"
+        title: "any title"
       }
     }
 
@@ -31,7 +31,7 @@ RSpec.describe TestTypeController, type: :controller do
         TestType.create(
           start_url: "https://facebook.com",
 	  objective: "Achar a mina da savero",
-	  allow_abandonment: "true"
+          title: "any title"
         )
       end
     end
@@ -58,7 +58,7 @@ RSpec.describe TestTypeController, type: :controller do
       test_type = TestType.create(
         start_url: "https://facebook.com",
 	objective: "Achar a mina da savero",
-	allow_abandonment: "true"
+        title: "any title"
       )
     end
 
@@ -84,14 +84,14 @@ RSpec.describe TestTypeController, type: :controller do
       test_type = TestType.create(
         start_url: "https://facebook.com",
 	objective: "Achar a mina da savero",
-	allow_abandonment: "true"
+        title: "any title"
       )
     end
 
     expected_test_type = {
       start_url: "https://facebook.com",
       objective: "Achar a mina da savero",
-      allow_abandonment: true
+      title: "a good title"
     }
 
     it "return ok status code" do

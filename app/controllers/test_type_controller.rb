@@ -5,7 +5,6 @@ class TestTypeController < ApplicationController
     new_record = TestType.create(
       start_url: params['start_url'],
       objective: params['objective'],
-      allow_abandonment:  params['allow_abandonment'],
       title: params['title']
     )
 
@@ -29,7 +28,6 @@ class TestTypeController < ApplicationController
 
     record.start_url = params['start_url'] || record.start_url
     record.objective = params['objective'] || record.objective
-    record.allow_abandonment = params['allow_abandonment'] || record.allow_abandonment
     record.title = params['title'] || record.title
 
     record.save

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_29_231858) do
+ActiveRecord::Schema.define(version: 2019_10_29_232628) do
 
   create_table "emotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.float "anger"
@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 2019_10_29_231858) do
   create_table "test_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "start_url"
     t.text "objective"
-    t.boolean "allow_abandonment"
     t.string "title"
   end
 

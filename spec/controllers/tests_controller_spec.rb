@@ -7,7 +7,7 @@ RSpec.describe TestsController, type: :controller do
     test_type = TestType.create(
       start_url: "https://facebook.com",
       objective: "Achar a mina da savero",
-      allow_abandonment: "true"
+      title: 'any_title',
     )
 
     people = People.create(
@@ -41,7 +41,7 @@ RSpec.describe TestsController, type: :controller do
     test_type = TestType.create(
       start_url: "https://facebook.com",
       objective: "Achar a mina da savero",
-      allow_abandonment: "true"
+      title: 'any_title'
     )
 
     people = People.create(
@@ -79,7 +79,7 @@ RSpec.describe TestsController, type: :controller do
     test_type = TestType.create(
       start_url: "https://facebook.com",
       objective: "Achar a mina da savero",
-      allow_abandonment: "true"
+      title: 'any_title'
     )
 
     people = People.create(
@@ -117,7 +117,7 @@ RSpec.describe TestsController, type: :controller do
     test_type = TestType.create(
       start_url: "https://facebook.com",
       objective: "Achar a mina da savero",
-      allow_abandonment: "true"
+      title: 'any_title'
     )
 
     people = People.create(
