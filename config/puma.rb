@@ -7,7 +7,8 @@ rackup DefaultRackup
 port        ENV.fetch("PORT") { 3000 }
 environment ENV.fetch("RAILS_ENV") { "development" }
 
-bind "unix:///var/run/puma/my_app.sock"
-pidfile "/var/run/puma/my_app.sock"
+bind "my_app.sock"
+pidfile "my_app.sock"
 
 plugin :tmp_restart
+
