@@ -19,7 +19,7 @@ module GraphCalculators
     private
 
     def emotions_attributes
-      @emotions_attributes ||= Emotion.column_names.drop(1)[0..-3]
+      @emotions_attributes ||= Emotion.column_names.drop(1)[0..-3] - ["disgusted"]
     end
 
     def occurrences
