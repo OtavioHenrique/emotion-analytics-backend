@@ -7,5 +7,8 @@ rackup DefaultRackup
 port        ENV.fetch("PORT") { 3000 }
 environment ENV.fetch("RAILS_ENV") { "development" }
 
+bind "my_app.sock"
+pidfile "my_app.sock"
+
 plugin :tmp_restart
 
