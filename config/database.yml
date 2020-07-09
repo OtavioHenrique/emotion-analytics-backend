@@ -9,17 +9,19 @@
 # And be sure to use new-style password hashing:
 #   https://dev.mysql.com/doc/refman/5.7/en/password-hashing.html
 #
+
 default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
-  host: 127.0.0.1
+  password: 12345qwert
+  host: aa1nkmjnprum9ox.cgobny05jezp.us-east-1.rds.amazonaws.com
+  port: 3306
 
 development:
   <<: *default
-  database: backend_development
+  database: backend_production
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -50,7 +52,7 @@ test:
 production:
   <<: *default
   database: backend_production
-  username: <%= ENV['MYSQL_USER'] %>
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  host: <%= ENV['MYSQL_URL'] %>
+  username: root
+  password: 12345qwert
+  host: 'aa1nkmjnprum9ox.cgobny05jezp.us-east-1.rds.amazonaws.com'
   port: 3306
