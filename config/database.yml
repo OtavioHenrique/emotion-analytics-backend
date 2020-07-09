@@ -48,4 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-    url: <%= ENV['MYSQL_URL'] %>
+  <<: *default
+  database: backend_production
+  username: <%= ENV['MYSQL_USER'] %>
+  password: <%= ENV['MYSQL_PASSWORD'] %>
+  host: <%= ENV['MYSQL_URL'] %>
+  port: 3306
